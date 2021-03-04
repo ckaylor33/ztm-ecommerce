@@ -18,6 +18,7 @@ Redux<br>
 -Known as FLUX pattern (Action -> dispatcher -> Store -> View), better than MVC (Action -> Controller -> Model -> View)
 -If currentUser state stayed within app, would have to drill/tunnel props down for the cart component -> cart nested in navbar -> Navbar doesn't need currentUser state<br>
 -Reducer will store currentUser value that we pass in using mapStateToProps into the header -> header no longer dependent on App.js passing in state, but App still updates user-reducer.js value so header gets latest current user property<br>
+-Cart state gets re-rendered everytime any state changes - need to cache these values if if cart state doesn't change so cart doesn't re-render everytime; will use reselect
 
 Data & Authenticatin<br>
 -Working out how to use firebase for authentication, checking if the user exists and then storing the user state inside the app so they'll be able to store things in cart and checkout using their details
