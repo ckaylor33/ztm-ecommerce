@@ -23,3 +23,7 @@ Redux<br>
 Data & Authenticatin<br>
 -Working out how to use firebase for authentication, checking if the user exists and then storing the user state inside the app so they'll be able to store things in cart and checkout using their details
 -Doing this for both sign in, up and sign in with google authentication
+
+Session storage & persistence<br>
+-Will use redux persist for local storage for now; this is so the user cart doesn't re-render and clear completely on refresh
+-Could implement firebase storage at some point
