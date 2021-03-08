@@ -15,9 +15,10 @@ const StripeCheckoutButton = ({ price }) => {
     <StripeCheckout
       currency='GBP'
       label='Pay Now'
-      name='Ocean Clothing Ltd.'
+      name='CrownCoffee'
       billingAddress
       shippingAddress
+      image='https://svgshare.com/i/CUz.svg'
       description={`Your total is ${price}`}
       amount={priceForStripe}
       panelLabel='Pay Now'
