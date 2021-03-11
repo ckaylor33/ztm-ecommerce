@@ -21,7 +21,7 @@ Redux<br>
 -Cart state gets re-rendered everytime any state changes - need to cache these values if if cart state doesn't change so cart doesn't re-render everytime; will use reselect
 
 Data & Authenticatin<br>
--Use observer pattern for async requests to firebase, might modify to use REST (promise pattern) if possible
+-Use observer pattern for async requests to firebase, might modify to use REST (promise pattern) if possible - this is now handled by redux inside of a reusable action (redux-thunk)
 -Working out how to use firebase for authentication, checking if the user exists and then storing the user state inside the app so they'll be able to store things in cart and checkout using their details
 -Doing this for both sign in, up and sign in with google authentication
 -How to update data dynamically from db to the app, app should listen for firestore changes whenever data updates; app should always have the newest data

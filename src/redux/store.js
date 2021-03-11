@@ -1,9 +1,14 @@
 import { createStore, applyMiddleware } from 'redux'
 import { persistStore } from 'redux-persist'
 import logger from 'redux-logger'
-import rootReducer from './root-reducer'
+import createSagaMiddleware from 'redux-saga'
 
-const middlewares = []
+import rootReducer from './root-reducer'
+import rootSaga from './root.saga'
+
+const sagaMiddleware = createSagaMiddleware()
+
+const middlewares = [sagaMiddleware]
 
 if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger)
@@ -11,7 +16,6 @@ if (process.env.NODE_ENV === 'development') {
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares))
 
-export const persistor = persistStore(store)
+sagaMiddleware.run(rootSaga)
 
-// eslint-disable-next-line
-export default { store, persistor }
+export const persistor = persistStore(store)
